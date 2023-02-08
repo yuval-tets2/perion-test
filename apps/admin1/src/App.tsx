@@ -17,7 +17,7 @@ import { EventList } from "./event/EventList";
 import { EventCreate } from "./event/EventCreate";
 import { EventEdit } from "./event/EventEdit";
 import { EventShow } from "./event/EventShow";
-import { jwtAuthProvider } from "./auth-provider/ra-auth-jwt";
+import { httpAuthProvider } from "./auth-provider/ra-auth-http";
 
 const App = (): React.ReactElement => {
   const [dataProvider, setDataProvider] = useState<DataProvider | null>(null);
@@ -36,9 +36,9 @@ const App = (): React.ReactElement => {
   return (
     <div className="App">
       <Admin
-        title={"My service"}
+        title={"Order Service"}
         dataProvider={dataProvider}
-        authProvider={jwtAuthProvider}
+        authProvider={httpAuthProvider}
         theme={theme}
         dashboard={Dashboard}
         loginPage={Login}
